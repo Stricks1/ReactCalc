@@ -7,7 +7,6 @@ function Button({ name, color, wide }) {
     backgroundColor: color,
     width: wide ? '50%' : '25%',
   };
-
   return (
     <button type="button" style={styleButton}>{ name }</button>
   );

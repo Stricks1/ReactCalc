@@ -12,7 +12,7 @@ function ButtonPannel() {
     { name: '7', color: grayColor },
     { name: '8', color: grayColor },
     { name: '9', color: grayColor },
-    { name: 'X' },
+    { name: 'x' },
     { name: '4', color: grayColor },
     { name: '5', color: grayColor },
     { name: '6', color: grayColor },
