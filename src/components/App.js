@@ -13,17 +13,25 @@ class App extends React.Component {
     };
   }
 
-  handleClick(btnName) {
-    console.log('clicked');
-    console.log(this.state);
-    console.log(btnName);
+  handleClick(operation) {
+    const stateCalc = calculate(this.state, operation);
+    this.setState(stateCalc);
   }
 
   render() {
+    const { total, next, operation } = this.state;
+    let display = '0';
+    if (next) {
+      display = next;
+    } else if ((operation && operation !== '=') && total) {
+      display = operation;
+    } else {
+      display = total || '0';
+    }
     return (
       <div className="app m-auto">
-        <Display />
-        <ButtonPannel onClick={btnName => this.handleClick(btnName)} />
+        <Display result={display} />
+        <ButtonPannel onClick={nameBtn => this.handleClick(nameBtn)} />
       </div>
     );
   }

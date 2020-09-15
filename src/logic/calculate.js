@@ -1,10 +1,13 @@
 import operate from './operate';
 
 const calculate = (calculator, btnName) => {
-  const { total, next, operation } = calculator;
+  const { operation } = calculator;
+  let { total, next } = calculator;
+  next = (total === 'Error Division by 0') ? null : next;
+  total = (total === 'Error Division by 0') ? '0' : total;
 
   if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].some(v => btnName === v)) {
-    if (operation) {
+    if (operation && total) {
       return { total, next: next ? next + btnName : btnName, operation };
     }
     return { total: total ? total + btnName : btnName, next, operation };
@@ -35,13 +38,31 @@ const calculate = (calculator, btnName) => {
     };
   }
   if (operation) {
+    if (next) {
+      return {
+        total: operate(total, next, operation),
+        next: null,
+        operation: operate(total, next, operation) === 'Error Division by 0' ? null : btnName,
+      };
+    }
+    if (total) {
+      return {
+        total,
+        next,
+        operation: btnName,
+      };
+    }
     return {
-      total: operate(total, next, operation),
-      next: null,
-      operation: operate(total, next, operation) === 'Error Division by 0' ? null : btnName,
+      total,
+      next,
+      operation: null,
     };
   }
-  return calculator;
+  let retOperation = btnName;
+  if (btnName && !total && !next) {
+    retOperation = null;
+  }
+  return { total, next, operation: retOperation };
 };
 
 export default calculate;

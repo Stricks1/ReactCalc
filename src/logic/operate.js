@@ -21,7 +21,7 @@ const operate = (numberOne, numberTwo, operation) => {
     case '+':
       return big1.plus(big2).toString();
     default:
-      return big1;
+      return big1.toString();
   }
 };
 
