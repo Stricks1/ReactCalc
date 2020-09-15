@@ -18,6 +18,19 @@ const Calculate = (calculator, btnName) => {
     }
     return { total: total + btnName, next, operation };
   }
+  if (btnName === 'AC') {
+    return { total: null, next: null, operation: null };
+  }
+  if (btnName === '+/-') {
+    return { total: total ? Operate(total, '-1', 'x') : null, next: next ? Operate(next, '-1', 'x') : null, operation };
+  }
+  if (btnName === '=') {
+    return {
+      total: next ? Operate(total, next, operation) : total,
+      next: null,
+      operation: null,
+    };
+  }
   if (operation) {
     return {
       total: Operate(total, next, operation),
@@ -25,6 +38,7 @@ const Calculate = (calculator, btnName) => {
       operation: Operate(total, next, operation) === 'Error Division by 0' ? null : btnName,
     };
   }
+  return calculator;
 };
 
 export default Calculate;
