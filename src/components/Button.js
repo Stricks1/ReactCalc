@@ -2,7 +2,9 @@ import React from 'react';
 import '../index.css';
 import PropTypes from 'prop-types';
 
-function Button({ name, color, wide, onClickFunct }) {
+function Button({
+  name, color, wide, onClickFunct,
+}) {
   const styleButton = {
     backgroundColor: color,
     width: wide ? '50%' : '25%',
