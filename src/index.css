@@ -25,3 +25,28 @@ code {
     'Courier New',
     monospace;
 }
+
+button {
+  border: solid 1px gray;
+}
+
+.display {
+  text-align: end;
+  padding: 0.5rem 0.1rem;
+}
+
+.gray {
+  background-color: rgb(204, 197, 197);
+}
+
+.orange {
+  background-color: orange;
+}
+
+.simple {
+  width: 25%;
+}
+
+.double {
+  width: 50%;
+}
