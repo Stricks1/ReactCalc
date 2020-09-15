@@ -3,7 +3,7 @@ import Display from './Display';
 import ButtonPannel from './ButtonPannel';
 
 const App = () => (
-  <div className="App">
+  <div className="app m-auto">
     <Display />
     <ButtonPannel />
   </div>
