@@ -16,7 +16,10 @@ const Calculate = (calculator, btnName) => {
       }
       return { total, next: `0${btnName}`, operation };
     }
-    return { total: total + btnName, next, operation };
+    if (total) {
+      return { total: total + btnName, next, operation };
+    }
+    return { total: `0${btnName}`, next, operation };
   }
   if (btnName === 'AC') {
     return { total: null, next: null, operation: null };
