@@ -1,6 +1,6 @@
-import Operate from './operate';
+import operate from './operate';
 
-const Calculate = (calculator, btnName) => {
+const calculate = (calculator, btnName) => {
   const { total, next, operation } = calculator;
 
   if (['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].some(v => btnName === v)) {
@@ -25,23 +25,23 @@ const Calculate = (calculator, btnName) => {
     return { total: null, next: null, operation: null };
   }
   if (btnName === '+/-') {
-    return { total: total ? Operate(total, '-1', 'x') : null, next: next ? Operate(next, '-1', 'x') : null, operation };
+    return { total: total ? operate(total, '-1', 'x') : null, next: next ? operate(next, '-1', 'x') : null, operation };
   }
   if (btnName === '=') {
     return {
-      total: next ? Operate(total, next, operation) : total,
+      total: next ? operate(total, next, operation) : total,
       next: null,
       operation: null,
     };
   }
   if (operation) {
     return {
-      total: Operate(total, next, operation),
+      total: operate(total, next, operation),
       next: null,
-      operation: Operate(total, next, operation) === 'Error Division by 0' ? null : btnName,
+      operation: operate(total, next, operation) === 'Error Division by 0' ? null : btnName,
     };
   }
   return calculator;
 };
 
-export default Calculate;
+export default calculate;
