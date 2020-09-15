@@ -7,6 +7,8 @@
 
 Creating a simple calculator with React
 
+![screenshot](./src/calculator.png)
+
 
 ## Table of Contents
 
