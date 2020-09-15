@@ -43,14 +43,14 @@ function ButtonPannel() {
     }
 
     return (
-      <div>
+      <div className="d-flex calc-line">
         { result.map(btn => btn) }
       </div>
     );
   };
 
   return (
-    <div>
+    <div className="d-flex flex-column">
       { createPannelLine(propsBtns, 0) }
       { createPannelLine(propsBtns, 1) }
       { createPannelLine(propsBtns, 2) }
