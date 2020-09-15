@@ -2,12 +2,10 @@ import React from 'react';
 import '../index.css';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prefer-stateless-function
-class Display extends React.Component {
-  render() {
-    const { result } = this.props;
-    return <div className="display">{result}</div>;
-  }
+function Display({ result }) {
+  return (
+    <div className="display">{result}</div>
+  );
 }
 
 Display.propTypes = {
