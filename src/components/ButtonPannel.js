@@ -2,7 +2,7 @@ import React from 'react';
 import '../index.css';
 import Button from './Button';
 
-function ButtonPannel() {
+function ButtonPannel(clickFunction) {
   const grayColor = '#e0e0e0';
   const doubleSize = true;
   const propsBtns = [{ name: 'AC', color: grayColor },
@@ -35,6 +35,7 @@ function ButtonPannel() {
         name={propsBtns[index].name}
         color={propsBtns[index].color}
         wide={propsBtns[index].wide}
+        onClickFunct={clickFunction.onClick}
       />);
       i += 1;
       index += 1;
