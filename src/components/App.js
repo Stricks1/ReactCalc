@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Display from './Display';
 import ButtonPannel from './ButtonPannel';
 import calculate from '../logic/calculate';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -32,7 +32,7 @@ class App extends React.Component {
     return (
       <div className="app m-auto">
         <Display result={display} />
-        <ButtonPannel onClick={this.handleClick} />
+        <ButtonPannel onClick={nameBtn => this.handleClick(nameBtn)} />
       </div>
     );
   }
