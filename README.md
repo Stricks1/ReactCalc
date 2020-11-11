@@ -12,7 +12,6 @@ Creating a simple calculator with React
 
 ## Table of Contents
 
-* [Live Demo](#demo)
 * [Installation](#installation)
 * [Built With](#built-with)
 * [Contributing](#contributing)
@@ -20,10 +19,6 @@ Creating a simple calculator with React
 * [Authors](#author)
 * [License](#license)
 
-
-## Live Demo
-
-[Live Demo](https://reactcalc1.herokuapp.com/)
 
 ## Installation
 
