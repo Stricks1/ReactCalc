@@ -12,6 +12,7 @@ Creating a simple calculator with React
 
 ## Table of Contents
 
+* [Live Demo](#live-demo)
 * [Installation](#installation)
 * [Built With](#built-with)
 * [Contributing](#contributing)
@@ -19,6 +20,9 @@ Creating a simple calculator with React
 * [Authors](#author)
 * [License](#license)
 
+
+## Live Demo
+[Live Demo](https://blissful-mayer-91f186.netlify.app/)
 
 ## Installation
 
